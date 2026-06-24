@@ -1,4 +1,4 @@
-import { Star, Quote, Sparkles, Award, Clock, Users, Coins, Settings, Globe, Heart } from 'lucide-react';
+import { Star, Quote, Sparkles, Award, Clock, Users, Coins, Settings, Globe } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [

@@ -1,4 +1,4 @@
-import { Lightbulb, Eye, Target, Heart, Award, Users, Cpu, ShieldCheck, Sparkles, Calendar, Check } from 'lucide-react';
+import { Lightbulb, Eye, Target, Heart, Award, Users, Cpu, ShieldCheck, Sparkles, Calendar } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -109,14 +109,14 @@ const About = () => {
             </div>
 
             {/* Highlights Grid */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-navy-850 to-navy-900 rounded-2xl p-8 text-white border border-white/10 glow-card shadow-xl">
+            <div className="lg:col-span-5 bg-linear-to-br from-navy-850 to-navy-900 rounded-2xl p-8 text-white border border-white/10 glow-card shadow-xl">
               <h3 className="text-xl font-bold mb-6 tracking-wide text-cyan-400 border-b border-white/10 pb-4">Key Achievements</h3>
               <div className="space-y-6">
                 {highlights.map((hl, idx) => {
                   const Icon = hl.icon;
                   return (
                     <div key={idx} className="flex items-start space-x-4">
-                      <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-400/20 rounded-xl flex items-center justify-center text-cyan-400 flex-shrink-0">
+                      <div className="w-10 h-10 bg-cyan-500/10 border border-cyan-400/20 rounded-xl flex items-center justify-center text-cyan-400 shrink-0">
                         <Icon size={20} />
                       </div>
                       <div>
@@ -197,7 +197,7 @@ const About = () => {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1.5 h-full bg-gradient-to-b from-cyan-400 to-blue-500 opacity-20"></div>
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1.5 h-full bg-linear-to-b from-cyan-400 to-blue-500 opacity-20"></div>
 
             {/* Timeline items */}
             <div className="space-y-12">

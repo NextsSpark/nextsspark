@@ -79,10 +79,6 @@ const Team = () => {
     },
   ];
 
-  // Initials generator for placeholder fallback
-  const getInitials = (name: string) =>
-    name.split(' ').map((n) => n[0]).join('').toUpperCase();
-
   const avatarGradients = [
     'from-cyan-500 to-blue-600',
     'from-purple-500 to-pink-500',

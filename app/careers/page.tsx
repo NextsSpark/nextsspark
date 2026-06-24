@@ -1,4 +1,4 @@
-import { Briefcase, MapPin, DollarSign, ArrowRight, Coins, HeartPulse, GraduationCap, Clock, Compass, PartyPopper, Sparkles, CheckCircle } from 'lucide-react';
+import { Briefcase, MapPin, DollarSign, ArrowRight, Coins, HeartPulse, GraduationCap, Clock, Compass, PartyPopper, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const Careers = () => {
@@ -185,15 +185,15 @@ const Careers = () => {
 
                   <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4 items-center">
                     <div className="flex items-center space-x-2 text-gray-700 font-semibold">
-                      <MapPin size={14} className="text-cyan-500 flex-shrink-0" />
+                      <MapPin size={14} className="text-cyan-500 shrink-0" />
                       <span className="text-xs">{job.location}</span>
                     </div>
                     <div className="flex items-center space-x-2 text-gray-700 font-semibold">
-                      <Briefcase size={14} className="text-cyan-500 flex-shrink-0" />
+                      <Briefcase size={14} className="text-cyan-500 shrink-0" />
                       <span className="text-xs">{job.type}</span>
                     </div>
                     <div className="flex items-center space-x-2 text-gray-700 font-semibold">
-                      <DollarSign size={14} className="text-cyan-500 flex-shrink-0" />
+                      <DollarSign size={14} className="text-cyan-500 shrink-0" />
                       <span className="text-xs">{job.salary}</span>
                     </div>
                     <div className="text-right">
@@ -236,7 +236,7 @@ const Careers = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {internshipPrograms.map((program, index) => (
-              <div key={index} className="bg-gradient-to-br from-cyan-50 to-blue-50/50 p-8 rounded-2xl border-2 border-cyan-200/60 hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div key={index} className="bg-linear-to-br from-cyan-50 to-blue-50/50 p-8 rounded-2xl border-2 border-cyan-200/60 hover:shadow-md transition-shadow flex flex-col justify-between">
                 <div>
                   <h3 className="text-lg font-bold text-navy-800 mb-4 tracking-tight leading-snug">{program.title}</h3>
 

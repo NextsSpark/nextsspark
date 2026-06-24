@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Code2, Zap, Shield, Users, TrendingUp, Award, Sparkles, Cpu, Check, Star, MapPin, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Code2, Zap, Shield, Users, Award, Sparkles, Cpu, Star, MapPin, Mail, Phone } from 'lucide-react';
 
 const Home = () => {
   const services = [

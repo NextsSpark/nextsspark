@@ -2,9 +2,17 @@
 const nextConfig = {
   images: {
     unoptimized: true,
-    domains: ['localhost', 'nextsspark.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'nextsspark.com',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+    ],
   },
-  swcMinify: true,
   reactStrictMode: true,
 };
 
