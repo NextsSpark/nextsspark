@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import LayoutWrapper from '@/components/LayoutWrapper';
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'NEXTSSPARK - Software Development & Consulting',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -51,9 +51,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="bg-white text-gray-900 font-sans">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

@@ -206,7 +206,7 @@ const Testimonials = () => {
                 {/* Author */}
                 <div className="border-t border-gray-100 pt-5">
                   <div className="flex items-center space-x-3.5">
-                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${testimonial.avatarColor} flex items-center justify-center text-white font-extrabold text-sm shadow-sm flex-shrink-0`}>
+                    <div className={`w-10 h-10 rounded-xl bg-linear-to-br ${testimonial.avatarColor} flex items-center justify-center text-white font-extrabold text-sm shadow-sm shrink-0`}>
                       {testimonial.initials}
                     </div>
                     <div>
@@ -236,7 +236,7 @@ const Testimonials = () => {
             {industries.map((industry, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-cyan-50 to-blue-50/50 p-6 rounded-2xl text-center border border-cyan-200/60 shadow-sm hover:shadow-md transition-shadow"
+                className="bg-linear-to-br from-cyan-50 to-blue-50/50 p-6 rounded-2xl text-center border border-cyan-200/60 shadow-sm hover:shadow-md transition-shadow"
               >
                 <h3 className="text-base font-extrabold text-navy-800 mb-1 tracking-tight">{industry.name}</h3>
                 <p className="text-[10px] text-gray-500 font-semibold uppercase">{industry.count}</p>

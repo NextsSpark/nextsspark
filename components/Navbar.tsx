@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,13 +46,20 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20 px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-cyan-400 text-[#0F0D28] font-bold">
+            {/* <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-cyan-400 text-[#0F0D28] font-bold">
               NS
-            </div>
+            </div> */}
+            <Image
+              src="/Logo_1.png"
+              alt="NEXTSSPARK Logo"
+              width={100}
+              height={100}
+              className="rounded-xl"
+            />
 
-            <span className="text-white font-bold text-xl tracking-wide">
+            {/* <span className="text-white font-bold text-xl tracking-wide">
               NEXTSSPARK
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Navigation */}

@@ -38,7 +38,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
+              <div className="w-10 h-10 bg-linear-to-br from-cyan-400 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
                 <span className="text-navy-900 font-extrabold text-lg">NS</span>
               </div>
               <span className="font-extrabold text-xl tracking-tight">
@@ -50,19 +50,19 @@ const Footer = () => {
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 group">
-                <MapPin size={18} className="text-cyan-400 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <MapPin size={18} className="text-cyan-400 shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="text-sm text-gray-300">Lahore, Pakistan</span>
               </div>
               <div className="flex items-center space-x-3 group">
-                <Mail size={18} className="text-cyan-400 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <Mail size={18} className="text-cyan-400 shrink-0 group-hover:scale-110 transition-transform" />
                 <a href="mailto:nextsspark@gmail.com" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors">
                   nextsspark@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3 group">
-                <Phone size={18} className="text-cyan-400 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <a href="tel:+923001234567" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors">
-                  +92 (300) 123-4567
+                <Phone size={18} className="text-cyan-400 shrink-0 group-hover:scale-110 transition-transform" />
+                <a href="tel:+923171445114" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors">
+                  +92-317-1445114
                 </a>
               </div>
             </div>

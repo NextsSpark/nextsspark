@@ -111,7 +111,7 @@ const Services = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                   {/* Content (Col Span: 7) */}
                   <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-md`}>
+                    <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${service.color} flex items-center justify-center mb-6 shadow-md`}>
                       <Icon size={24} className="text-white" />
                     </div>
                     <span className="text-cyan-600 text-xs font-bold uppercase tracking-wider block mb-2">
@@ -128,7 +128,7 @@ const Services = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-8">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start space-x-3">
-                          <CheckCircle size={18} className="text-cyan-500 mt-0.5 flex-shrink-0" />
+                          <CheckCircle size={18} className="text-cyan-500 mt-0.5 shrink-0" />
                           <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
                         </div>
                       ))}
@@ -151,8 +151,8 @@ const Services = () => {
 
                   {/* Visual Mockup Panels (Col Span: 5) */}
                   <div className={`hidden lg:block lg:col-span-5 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div className={`rounded-2xl bg-gradient-to-br ${service.color} p-1 shadow-xl glow-card`}>
-                      <div className="bg-navy-900 rounded-xl p-6 text-white min-h-[300px] flex flex-col justify-between">
+                    <div className={`rounded-2xl bg-linear-to-br ${service.color} p-1 shadow-xl glow-card`}>
+                      <div className="bg-navy-900 rounded-xl p-6 text-white min-h-75 flex flex-col justify-between">
                         {/* Mockup Header */}
                         <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
                           <div className="flex items-center space-x-1.5">
@@ -165,7 +165,7 @@ const Services = () => {
 
                         {/* Interactive UI Mock Panel based on Index */}
                         {index === 0 && (
-                          <div className="font-mono text-xs text-gray-300 space-y-2 flex-grow text-left">
+                          <div className="font-mono text-xs text-gray-300 space-y-2 grow text-left">
                             <p className="text-cyan-400"># API Endpoint Initialization</p>
                             <p className="text-yellow-400">GET <span className="text-green-300">/v1/projects/scale</span></p>
                             <p className="text-gray-400">{`{`}</p>
@@ -180,13 +180,13 @@ const Services = () => {
                         )}
 
                         {index === 1 && (
-                          <div className="flex-grow flex flex-col justify-center text-left space-y-4">
+                          <div className="grow flex flex-col justify-center text-left space-y-4">
                             <div className="flex items-center justify-between">
                               <span className="text-xs text-gray-400 font-semibold uppercase">Cloud Utilization</span>
                               <span className="text-xs text-cyan-400 font-bold">Optimized (-35%)</span>
                             </div>
                             <div className="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
-                              <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full w-2/3"></div>
+                              <div className="bg-linear-to-r from-cyan-400 to-blue-500 h-full rounded-full w-2/3"></div>
                             </div>
                             <div className="grid grid-cols-2 gap-4 pt-2">
                               <div className="border border-white/5 bg-white/5 rounded-lg p-2.5 text-center">
@@ -202,9 +202,9 @@ const Services = () => {
                         )}
 
                         {index === 2 && (
-                          <div className="flex-grow flex flex-col justify-center text-left space-y-3.5">
+                          <div className="grow flex flex-col justify-center text-left space-y-3.5">
                             <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 flex-shrink-0">
+                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 shrink-0">
                                 <GraduationCap size={16} />
                               </div>
                               <div>
@@ -213,7 +213,7 @@ const Services = () => {
                               </div>
                             </div>
                             <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 flex-shrink-0">
+                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 shrink-0">
                                 <Cpu size={16} />
                               </div>
                               <div>
@@ -222,7 +222,7 @@ const Services = () => {
                               </div>
                             </div>
                             <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 flex-shrink-0">
+                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 shrink-0">
                                 <Layers size={16} />
                               </div>
                               <div>
@@ -322,7 +322,7 @@ const Services = () => {
                 key={index}
                 className={`rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between ${
                   plan.highlighted
-                    ? 'ring-2 ring-cyan-500 shadow-xl bg-gradient-to-br from-cyan-50 to-blue-50 text-navy-900 scale-105 relative'
+                    ? 'ring-2 ring-cyan-500 shadow-xl bg-linear-to-br from-cyan-50 to-blue-50 text-navy-900 scale-105 relative'
                     : 'bg-gray-50/60 border border-gray-200 text-navy-800'
                 }`}
               >
@@ -338,7 +338,7 @@ const Services = () => {
                   <ul className="space-y-3.5 mb-8">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center space-x-3 text-sm text-gray-700">
-                        <CheckCircle size={18} className="text-cyan-500 flex-shrink-0" />
+                        <CheckCircle size={18} className="text-cyan-500 shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}

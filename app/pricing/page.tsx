@@ -145,7 +145,7 @@ const Pricing = () => {
                 key={index}
                 className={`relative rounded-2xl transition-all duration-300 flex flex-col justify-between p-8 border ${
                   plan.highlight
-                    ? 'ring-2 ring-cyan-500 shadow-xl bg-gradient-to-br from-cyan-50 to-blue-50/50 border-cyan-300 scale-105 z-10'
+                    ? 'ring-2 ring-cyan-500 shadow-xl bg-linear-to-br from-cyan-50 to-blue-50/50 border-cyan-300 scale-105 z-10'
                     : 'bg-white border-gray-250 hover:shadow-lg'
                 }`}
               >
@@ -181,9 +181,9 @@ const Pricing = () => {
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start space-x-3 text-xs">
                         {feature.included ? (
-                          <Check size={16} className="text-green-500 flex-shrink-0 mt-0.5" />
+                          <Check size={16} className="text-green-500 shrink-0 mt-0.5" />
                         ) : (
-                          <X size={16} className="text-gray-300 flex-shrink-0 mt-0.5" />
+                          <X size={16} className="text-gray-300 shrink-0 mt-0.5" />
                         )}
                         <div className={feature.included ? 'text-gray-700 font-semibold' : 'text-gray-400'}>
                           <span>{feature.name}</span>
@@ -229,7 +229,7 @@ const Pricing = () => {
                     <ul className="space-y-3.5 mb-8">
                       {training.included.map((item, idx) => (
                         <li key={idx} className="flex items-center space-x-3 text-xs text-gray-700">
-                          <Check size={16} className="text-cyan-500 flex-shrink-0" />
+                          <Check size={16} className="text-cyan-500 shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -315,7 +315,7 @@ const Pricing = () => {
             {faqs.map((faq, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-start space-x-3 text-left">
-                  <HelpCircle size={18} className="text-cyan-500 mt-1 flex-shrink-0" />
+                  <HelpCircle size={18} className="text-cyan-500 mt-1 shrink-0" />
                   <div>
                     <h3 className="text-base font-bold text-navy-800 mb-2 tracking-tight">{faq.q}</h3>
                     <p className="text-gray-600 text-xs leading-relaxed">{faq.a}</p>

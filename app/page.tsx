@@ -77,7 +77,7 @@ const Home = () => {
 
               <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
                 Transform Your <br />
-                <span className="gradient-text bg-gradient-to-r from-white via-cyan-200 to-cyan-400">Digital Future</span>
+                <span className="gradient-text bg-linear-to-r from-white via-cyan-200 to-cyan-400">Digital Future</span>
               </h1>
 
               <p className="text-lg text-gray-400 mb-8 leading-relaxed max-w-xl">
@@ -102,48 +102,60 @@ const Home = () => {
             </div>
 
             {/* Right Visual Code Mockup */}
-            <div className="hidden lg:block lg:col-span-5 animate-slideUp animation-delay-200">
-              <div className="dark-glass-card p-4 rounded-2xl glow-card border border-white/15">
-                {/* Code Editor Header */}
-                <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
-                  <div className="flex items-center space-x-2">
-                    <span className="w-3 h-3 rounded-full bg-red-500 block"></span>
-                    <span className="w-3 h-3 rounded-full bg-yellow-500 block"></span>
-                    <span className="w-3 h-3 rounded-full bg-green-500 block"></span>
-                  </div>
-                  <div className="text-xs text-gray-500 font-mono font-semibold">nextsspark.ts</div>
-                  <div className="w-12"></div>
-                </div>
+            {/* Hero Image Card */}
+<div className="relative group">
 
-                {/* Code Content */}
-                <div className="font-mono text-sm leading-relaxed space-y-2 text-left">
-                  <p className="text-cyan-400"><span className="text-purple-400">const</span> startup <span className="text-white">=</span> &#123;</p>
-                  <p className="pl-4 text-gray-300">name: <span className="text-green-300">'NEXTSSPARK'</span>,</p>
-                  <p className="pl-4 text-gray-300">efficiency: <span className="text-yellow-300">'99.8%'</span>,</p>
-                  <p className="pl-4 text-gray-300">stack: [</p>
-                  <p className="pl-8 text-gray-400"><span className="text-green-300">'Next.js'</span>, <span className="text-green-300">'AI Engineering'</span>, <span className="text-green-300">'Cloud'</span></p>
-                  <p className="pl-4 text-gray-300">],</p>
-                  <p className="pl-4 text-gray-300">uptime: <span className="text-green-400">'100%'</span>,</p>
-                  <p className="pl-4 text-gray-300">status: <span className="text-green-300">'Scale Ready'</span></p>
-                  <p className="text-cyan-400">&#125;;</p>
-                </div>
+  {/* Glow */}
+  <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-full opacity-40 group-hover:opacity-70 transition duration-700"></div>
 
-                {/* Mini Graph Overlay */}
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                  <div>
-                    <p className="text-xs text-gray-500 font-semibold tracking-wider uppercase mb-1">Response Time</p>
-                    <p className="text-lg font-bold text-white tracking-wide">12ms <span className="text-xs text-green-400">(-8.4%)</span></p>
-                  </div>
-                  <div className="flex space-x-1 items-end h-8">
-                    <span className="w-1.5 bg-cyan-500/30 h-3 rounded-full"></span>
-                    <span className="w-1.5 bg-cyan-500/50 h-5 rounded-full"></span>
-                    <span className="w-1.5 bg-cyan-500/70 h-4 rounded-full"></span>
-                    <span className="w-1.5 bg-cyan-500 h-6 rounded-full"></span>
-                    <span className="w-1.5 bg-cyan-400 h-8 rounded-full"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+  {/* Card */}
+  <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0F172A] to-[#020617] shadow-2xl">
+
+    {/* Dashboard Image */}
+    <img
+      src="/images/team/Saqib.jpg"
+      alt="NEXTSSPARK Dashboard"
+      className="w-full h-full object-cover"
+    />
+
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent"></div>
+
+    {/* Floating Badge */}
+    <div className="absolute top-5 left-5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10">
+      <span className="text-cyan-400 text-sm font-semibold">
+        AI Powered Platform
+      </span>
+    </div>
+
+    {/* Floating Stats */}
+    <div className="absolute bottom-5 left-5 right-5 flex justify-between">
+
+      <div className="bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-4 border border-white/10">
+        <p className="text-xs uppercase tracking-widest text-gray-400">
+          Active Clients
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-1">
+          250+
+        </h3>
+      </div>
+
+      <div className="bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-4 border border-white/10">
+        <p className="text-xs uppercase tracking-widest text-gray-400">
+          Projects
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-1">
+          500+
+        </h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
           </div>
 
           {/* Stats Bar */}
@@ -187,7 +199,7 @@ const Home = () => {
                   key={index}
                   className="group p-8 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 border border-gray-200/60 hover:border-cyan-400 glow-card"
                 >
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200 shadow-md`}>
+                  <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-200 shadow-md`}>
                     <Icon size={24} className="text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-navy-800 mb-3">{service.title}</h3>
@@ -244,7 +256,7 @@ const Home = () => {
                   "{testimonial.content}"
                 </p>
                 <div className="flex items-center space-x-4 border-t border-gray-100 pt-5">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${testimonial.avatarColor} flex items-center justify-center text-white font-bold text-sm shadow-sm`}>
+                  <div className={`w-10 h-10 rounded-xl bg-linear-to-br ${testimonial.avatarColor} flex items-center justify-center text-white font-bold text-sm shadow-sm`}>
                     {testimonial.initials}
                   </div>
                   <div>
@@ -292,7 +304,7 @@ const Home = () => {
             {/* Contact Info Cards */}
             <div className="lg:col-span-2 flex flex-col gap-6">
               <div className="group p-6 bg-white rounded-2xl border border-gray-200/60 hover:border-cyan-400 hover:shadow-lg transition-all duration-300 flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 bg-linear-to-br from-cyan-400 to-cyan-500 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
                   <MapPin size={22} className="text-white" />
                 </div>
                 <div>
@@ -301,7 +313,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="group p-6 bg-white rounded-2xl border border-gray-200/60 hover:border-cyan-400 hover:shadow-lg transition-all duration-300 flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 bg-linear-to-br from-cyan-500 to-blue-400 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
                   <Mail size={22} className="text-white" />
                 </div>
                 <div>
@@ -310,12 +322,12 @@ const Home = () => {
                 </div>
               </div>
               <div className="group p-6 bg-white rounded-2xl border border-gray-200/60 hover:border-cyan-400 hover:shadow-lg transition-all duration-300 flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform">
+                <div className="w-12 h-12 bg-linear-to-br from-blue-400 to-purple-400 rounded-xl flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
                   <Phone size={22} className="text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-navy-800 mb-1">Call Us</h4>
-                  <a href="tel:+923001234567" className="text-cyan-600 text-sm hover:text-cyan-700 transition-colors font-semibold">+92 (300) 123-4567</a>
+                  <a href="tel:+923171445114" className="text-cyan-600 text-sm hover:text-cyan-700 transition-colors font-semibold">+92-317-1445114</a>
                 </div>
               </div>
             </div>

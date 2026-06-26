@@ -296,6 +296,98 @@ html {
   margin-inline: auto;
 }
 
+.blog-content {
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.blog-content > * + * {
+  margin-top: 1.25rem;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  color: #16133c;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.blog-content h1 {
+  font-size: 2.5rem;
+}
+
+.blog-content h2 {
+  margin-top: 2.5rem;
+  font-size: 2rem;
+}
+
+.blog-content h3 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.blog-content p {
+  color: #374151;
+}
+
+.blog-content a {
+  color: #0a9db5;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5rem;
+}
+
+.blog-content ul {
+  list-style: disc;
+}
+
+.blog-content ol {
+  list-style: decimal;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #00bcd9;
+  background: #ecfdff;
+  padding: 1rem 1.25rem;
+  color: #16133c;
+  font-weight: 600;
+}
+
+.blog-content pre {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: #0f0d28;
+  padding: 1rem;
+  color: #ecfdff;
+}
+
+.blog-content code {
+  border-radius: 0.375rem;
+  background: #f3f4f6;
+  padding: 0.15rem 0.35rem;
+  color: #0f6577;
+  font-size: 0.92em;
+}
+
+.blog-content pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.blog-content img {
+  height: auto;
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
 /* =========================
    Animation Delays
 ========================= */

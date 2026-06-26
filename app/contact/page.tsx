@@ -93,7 +93,7 @@ const Contact = () => {
                 {[
                   { icon: MapPin, label: 'Lahore, Punjab, Pakistan', href: null },
                   { icon: Mail, label: 'nextsspark@gmail.com', href: 'mailto:nextsspark@gmail.com' },
-                  { icon: Phone, label: '+92 (300) 123-4567', href: 'tel:+923001234567' },
+                  { icon: Phone, label: '+92 (317) 144-5114', href: 'tel:+923171445114' },
                   { icon: Clock, label: 'Mon – Fri, 9 AM – 6 PM PKT', href: null },
                 ].map(({ icon: Icon, label, href }) => (
                   <div key={label} className="flex items-center space-x-4 group">
