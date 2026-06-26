@@ -110,7 +110,7 @@ const Home = () => {
                 <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-2xl opacity-40 group-hover:opacity-70 transition duration-700 pointer-events-none"></div>
 
                 {/* Card */}
-                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0F172A] to-[#020617] shadow-2xl h-80 sm:h-96 md:h-[520px]">
+                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-gray-900 via-[#0F172A] to-[#020617] shadow-2xl h-80 sm:h-96 md:h-[520px]">
 
                   {/* Dashboard Image */}
                   <img
@@ -121,7 +121,7 @@ const Home = () => {
                   />
 
                   {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-[#020617]/80 via-transparent to-transparent"></div>
 
                   {/* Floating Badge */}
                   <div className="absolute top-5 left-5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10">

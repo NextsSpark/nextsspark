@@ -1,4 +1,4 @@
-import { Code2, Zap, BookOpen, ArrowRight, CheckCircle, Sparkles, Cpu, Layers, GraduationCap } from 'lucide-react';
+import { Code2, Zap, BookOpen, ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const Services = () => {
