@@ -102,60 +102,51 @@ const Home = () => {
             </div>
 
             {/* Right Visual Code Mockup */}
-            {/* Hero Image Card */}
-<div className="relative group">
+            {/* Hero Image Card (responsive & constrained) */}
+            <div className="animate-fadeIn lg:col-span-5 flex justify-center">
+              <div className="relative group w-full max-w-md sm:max-w-lg lg:max-w-xl">
 
-  {/* Glow */}
-  <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-full opacity-40 group-hover:opacity-70 transition duration-700"></div>
+                {/* Glow */}
+                <div className="absolute -inset-4 bg-cyan-500/20 blur-3xl rounded-2xl opacity-40 group-hover:opacity-70 transition duration-700 pointer-events-none"></div>
 
-  {/* Card */}
-  <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0F172A] to-[#020617] shadow-2xl">
+                {/* Card */}
+                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#111827] via-[#0F172A] to-[#020617] shadow-2xl h-80 sm:h-96 md:h-[520px]">
 
-    {/* Dashboard Image */}
-    <img
-      src="/images/team/Saqib.jpg"
-      alt="NEXTSSPARK Dashboard"
-      className="w-full h-full object-cover"
-    />
+                  {/* Dashboard Image */}
+                  <img
+                    src="/Hero.jpg"
+                    alt="NEXTSSPARK Dashboard"
+                    className="w-full h-full object-cover"
+                    role="img"
+                  />
 
-    {/* Dark Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent"></div>
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-transparent"></div>
 
-    {/* Floating Badge */}
-    <div className="absolute top-5 left-5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10">
-      <span className="text-cyan-400 text-sm font-semibold">
-        AI Powered Platform
-      </span>
-    </div>
+                  {/* Floating Badge */}
+                  <div className="absolute top-5 left-5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/10">
+                    <span className="text-cyan-400 text-sm font-semibold">AI Powered Platform</span>
+                  </div>
 
-    {/* Floating Stats */}
-    <div className="absolute bottom-5 left-5 right-5 flex justify-between">
+                  {/* Floating Stats - stack on small screens */}
+                  <div className="absolute bottom-5 left-5 right-5 flex flex-col sm:flex-row justify-between gap-4">
 
-      <div className="bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-4 border border-white/10">
-        <p className="text-xs uppercase tracking-widest text-gray-400">
-          Active Clients
-        </p>
+                    <div className="bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-4 border border-white/10 flex-1">
+                      <p className="text-xs uppercase tracking-widest text-gray-400">Active Clients</p>
+                      <h3 className="text-2xl font-bold text-white mt-1">250+</h3>
+                    </div>
 
-        <h3 className="text-2xl font-bold text-white mt-1">
-          250+
-        </h3>
-      </div>
+                    <div className="bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-4 border border-white/10 flex-1">
+                      <p className="text-xs uppercase tracking-widest text-gray-400">Projects</p>
+                      <h3 className="text-2xl font-bold text-white mt-1">500+</h3>
+                    </div>
 
-      <div className="bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-4 border border-white/10">
-        <p className="text-xs uppercase tracking-widest text-gray-400">
-          Projects
-        </p>
+                  </div>
 
-        <h3 className="text-2xl font-bold text-white mt-1">
-          500+
-        </h3>
-      </div>
+                </div>
 
-    </div>
-
-  </div>
-
-</div>
+              </div>
+            </div>
           </div>
 
           {/* Stats Bar */}

@@ -25,10 +25,10 @@ const Team = () => {
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {
-      name: 'Waqar Hussain Shah',
-      role: 'Backend Engineer',
-      image: '/images/team/Saqib.jpg',
-      expertise: ['Python', 'PostgreSQL', 'AWS'],
+      name: 'Mubeen Jaffar',
+      role: 'Social Media Manager',
+      image: '/images/team/Mubeen.jpg',
+      expertise: ['Photoshop', 'Illustrator', 'InDesign'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     // {

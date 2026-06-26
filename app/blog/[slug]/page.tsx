@@ -141,7 +141,7 @@ export default async function BlogDetailPage({ params }: Props) {
       <section className="bg-gray-50">
         <div className="container-custom px-4">
           <div className="relative -mt-10 overflow-hidden rounded-2xl border border-white/60 bg-navy-900 shadow-2xl">
-            <div className="relative aspect-[16/7] min-h-[280px]">
+            <div className="relative aspect-16/7 min-h-70">
               <Image
                 src={blog.coverImage}
                 alt={blog.title}
@@ -244,7 +244,7 @@ export default async function BlogDetailPage({ params }: Props) {
                   href={`/blog/${item.slug}`}
                   className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-xl"
                 >
-                  <div className="relative aspect-[16/10]">
+                  <div className="relative aspect-16/10">
                     <Image
                       src={item.coverImage}
                       alt={item.title}
