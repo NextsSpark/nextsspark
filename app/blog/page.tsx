@@ -87,8 +87,7 @@ const Blog = async () => {
                 No published articles yet
               </h2>
               <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-gray-600">
-                Published blog posts from your admin dashboard will appear
-                here automatically.
+                Blogs Not Available Yet
               </p>
             </div>
           ) : (

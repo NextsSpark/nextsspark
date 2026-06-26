@@ -79,7 +79,7 @@ const About = () => {
               <Sparkles size={16} className="text-cyan-400" />
               <span className="text-cyan-300 text-sm font-semibold tracking-wide">Pioneers of Digital Change</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight">About NEXTSSPARK</h1>
+            <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight">About Us</h1>
             <p className="text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
               Empowering businesses through custom design, intelligent consulting, and certified training since 2019.
             </p>
@@ -109,7 +109,7 @@ const About = () => {
             </div>
 
             {/* Highlights Grid */}
-            <div className="lg:col-span-5 bg-linear-to-br from-navy-850 to-navy-900 rounded-2xl p-8 text-white border border-white/10 glow-card shadow-xl">
+            <div className="lg:col-span-5 bg-[#0F0D28] rounded-2xl p-8 text-white border border-white/10 glow-card shadow-xl">
               <h3 className="text-xl font-bold mb-6 tracking-wide text-cyan-400 border-b border-white/10 pb-4">Key Achievements</h3>
               <div className="space-y-6">
                 {highlights.map((hl, idx) => {

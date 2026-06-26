@@ -107,7 +107,7 @@ const Services = () => {
           {mainServices.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div key={index} className={`mb-24 ${index !== mainServices.length - 1 ? 'pb-24 border-b border-gray-150' : ''}`}>
+              <div key={index} className={`mb-24 ${index !== mainServices.length - 1 ? 'pb-24' : ''}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                   {/* Content (Col Span: 7) */}
                   <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
@@ -151,95 +151,18 @@ const Services = () => {
 
                   {/* Visual Mockup Panels (Col Span: 5) */}
                   <div className={`hidden lg:block lg:col-span-5 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <div className={`rounded-2xl bg-linear-to-br ${service.color} p-1 shadow-xl glow-card`}>
-                      <div className="bg-navy-900 rounded-xl p-6 text-white min-h-75 flex flex-col justify-between">
-                        {/* Mockup Header */}
-                        <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-                          <div className="flex items-center space-x-1.5">
-                            <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-                            <span className="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-                          </div>
-                          <span className="text-[10px] text-gray-500 font-mono">console.io</span>
+                    <div className={`rounded-2xl p-1 shadow-xl overflow-hidden bg-linear-to-br ${service.color}`}>
+                      <div className="bg-navy-900 rounded-xl text-white">
+                        <div className="w-full h-48 sm:h-64 md:h-72 lg:h-80 overflow-hidden rounded-t-xl">
+                          <img
+                            src={`/images/services/service-${index + 1}.jpg`}
+                            alt={`${service.title} artwork`}
+                            className="w-full h-full object-cover block"
+                          />
                         </div>
-
-                        {/* Interactive UI Mock Panel based on Index */}
-                        {index === 0 && (
-                          <div className="font-mono text-xs text-gray-300 space-y-2 grow text-left">
-                            <p className="text-cyan-400"># API Endpoint Initialization</p>
-                            <p className="text-yellow-400">GET <span className="text-green-300">/v1/projects/scale</span></p>
-                            <p className="text-gray-400">{`{`}</p>
-                            <p className="pl-4">database: <span className="text-green-300">"PostgreSQL"</span>,</p>
-                            <p className="pl-4">replica: <span className="text-cyan-400">true</span>,</p>
-                            <p className="pl-4">latency: <span className="text-yellow-400">"9.2ms"</span></p>
-                            <p className="text-gray-400">{`}`}</p>
-                            <div className="pt-2">
-                              <span className="px-2 py-0.5 bg-green-500/20 text-green-400 rounded border border-green-500/30 text-[9px] font-bold uppercase">200 OK</span>
-                            </div>
-                          </div>
-                        )}
-
-                        {index === 1 && (
-                          <div className="grow flex flex-col justify-center text-left space-y-4">
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs text-gray-400 font-semibold uppercase">Cloud Utilization</span>
-                              <span className="text-xs text-cyan-400 font-bold">Optimized (-35%)</span>
-                            </div>
-                            <div className="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
-                              <div className="bg-linear-to-r from-cyan-400 to-blue-500 h-full rounded-full w-2/3"></div>
-                            </div>
-                            <div className="grid grid-cols-2 gap-4 pt-2">
-                              <div className="border border-white/5 bg-white/5 rounded-lg p-2.5 text-center">
-                                <span className="text-[9px] text-gray-500 uppercase block mb-1">Audit Score</span>
-                                <span className="text-sm font-bold text-white">98%</span>
-                              </div>
-                              <div className="border border-white/5 bg-white/5 rounded-lg p-2.5 text-center">
-                                <span className="text-[9px] text-gray-500 uppercase block mb-1">Architecture</span>
-                                <span className="text-sm font-bold text-white">Cloud Native</span>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {index === 2 && (
-                          <div className="grow flex flex-col justify-center text-left space-y-3.5">
-                            <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 shrink-0">
-                                <GraduationCap size={16} />
-                              </div>
-                              <div>
-                                <h4 className="text-xs font-bold text-white">React 19 & Next.js 16</h4>
-                                <span className="text-[9px] text-gray-400">Class In Session</span>
-                              </div>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 shrink-0">
-                                <Cpu size={16} />
-                              </div>
-                              <div>
-                                <h4 className="text-xs font-bold text-white">AI Copilot Integration</h4>
-                                <span className="text-[9px] text-gray-400">Advanced Elective</span>
-                              </div>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 shrink-0">
-                                <Layers size={16} />
-                              </div>
-                              <div>
-                                <h4 className="text-xs font-bold text-white">Infrastructure Pipelines</h4>
-                                <span className="text-[9px] text-gray-400">DevOps Blueprint</span>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Card Footer Info */}
-                        <div className="flex items-center justify-between text-[10px] text-gray-400 mt-4 border-t border-white/5 pt-3">
-                          <span className="font-semibold">{service.title}</span>
-                          <span className="flex items-center space-x-1 text-green-400 font-bold">
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 block animate-ping"></span>
-                            <span>Live Preview</span>
-                          </span>
+                        <div className="p-6">
+                          <h4 className="text-sm font-bold text-white mb-1">{service.title}</h4>
+                          <p className="text-xs text-gray-300">{service.tagline}</p>
                         </div>
                       </div>
                     </div>

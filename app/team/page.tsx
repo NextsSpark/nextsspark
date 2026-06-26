@@ -12,16 +12,16 @@ const Team = () => {
   const teamMembers = [
     {
       name: 'Aqib Hussain',
-      role: 'Lead Developer',
+      role: 'Software Engineer',
       image: '/images/team/Aqib.jpg',
-      expertise: ['React', 'Node.js', 'TypeScript'],
+      expertise: ['React', 'Node', 'TypeScript'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {
       name: 'Fazal Ur Rahman',
       role: 'AI Engineer',
       image: '/images/team/fazal_1.jpg',
-      expertise: ['Figma', 'Branding', 'Prototyping'],
+      expertise: ['Python', 'Machine Learning', 'Data Science'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {

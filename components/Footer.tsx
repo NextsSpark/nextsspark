@@ -6,6 +6,7 @@ import {
   FaFacebookF,
   FaXTwitter,
 } from 'react-icons/fa6';
+import Image from 'next/image';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,9 +25,9 @@ const Footer = () => {
       { label: 'Portfolio', href: '/portfolio' },
     ],
     Legal: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Service', href: '#' },
-      { label: 'Cookie Policy', href: '#' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Terms of Service', href: '/terms-of-service' },
+      { label: 'Cookie Policy', href: '/cookie-policy' },
     ],
   };
 
@@ -38,12 +39,22 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-linear-to-br from-cyan-400 to-cyan-500 rounded-xl flex items-center justify-center shadow-md">
-                <span className="text-navy-900 font-extrabold text-lg">NS</span>
-              </div>
-              <span className="font-extrabold text-xl tracking-tight">
-                NEXTS<span className="text-cyan-400">SPARK</span>
-              </span>
+              <Link href="/" className="flex items-center gap-3">
+            {/* <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-cyan-400 text-[#0F0D28] font-bold">
+              NS
+            </div> */}
+            <Image
+              src="/Logo_1.png"
+              alt="NEXTSSPARK Logo"
+              width={100}
+              height={100}
+              className="rounded-xl"
+            />
+
+            {/* <span className="text-white font-bold text-xl tracking-wide">
+              NEXTSSPARK
+            </span> */}
+          </Link>
             </div>
             <p className="text-gray-400 text-sm max-w-sm mb-6 leading-relaxed">
               Leading software development, consulting, and IT training company delivering state-of-the-art innovative digital solutions.
