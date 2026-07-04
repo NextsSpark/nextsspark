@@ -120,7 +120,7 @@ const Contact = () => {
 
               <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
                 Start a <br />
-                <span className="gradient-text bg-gradient-to-r from-white via-cyan-200 to-cyan-400">
+                <span className="gradient-text bg-linear-to-r from-white via-cyan-200 to-cyan-400">
                   Conversation
                 </span>
               </h1>
@@ -137,7 +137,7 @@ const Contact = () => {
                   { icon: Clock, label: 'Mon – Fri, 9 AM – 6 PM PKT', href: null },
                 ].map(({ icon: Icon, label, href }) => (
                   <div key={label} className="flex items-center space-x-4 group">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/10 group-hover:border-cyan-400/30 transition-all duration-200 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/10 group-hover:border-cyan-400/30 transition-all duration-200 shrink-0">
                       <Icon size={17} />
                     </div>
                     {href ? (
@@ -169,7 +169,7 @@ const Contact = () => {
             </div>
 
             {/* ── Right: Contact Form ── */}
-            <div className="bg-white/[0.04] border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-sm">
+            <div className="bg-white/4 border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-sm">
               {submitStatus === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                   <div className="w-16 h-16 bg-cyan-500/15 border border-cyan-400/30 rounded-2xl flex items-center justify-center mb-5">
@@ -344,7 +344,7 @@ const Contact = () => {
                 key={i}
                 className="group bg-white rounded-2xl p-7 border border-gray-200/60 hover:border-cyan-400 hover:shadow-lg transition-all duration-300 glow-card"
               >
-                <div className={`w-10 h-1.5 rounded-full bg-gradient-to-r ${item.accent} mb-5 group-hover:w-14 transition-all duration-300`} />
+                <div className={`w-10 h-1.5 rounded-full bg-linear-to-r ${item.accent} mb-5 group-hover:w-14 transition-all duration-300`} />
                 <h3 className="font-bold text-navy-800 text-base mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -407,7 +407,7 @@ const Contact = () => {
                   </span>
                   <ChevronDown
                     size={18}
-                    className={`text-gray-400 flex-shrink-0 ml-4 transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-cyan-500' : ''}`}
+                    className={`text-gray-400 shrink-0 ml-4 transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-cyan-500' : ''}`}
                   />
                 </button>
                 <div
