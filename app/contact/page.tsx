@@ -1,9 +1,23 @@
 'use client';
 
-import { Mail, Phone, MapPin, Clock, Send, ChevronDown, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, ChevronDown, CheckCircle2, ArrowRight, Sparkles, Loader2 } from 'lucide-react';
 import { FaLinkedinIn, FaXTwitter, FaGithub, FaFacebookF } from 'react-icons/fa6';
 import { useState } from 'react';
 import Link from 'next/link';
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  company: string;
+  subject: string;
+  message: string;
+}
+
+interface ContactApiResponse {
+  success: boolean;
+  message: string;
+  errors?: Record<string, string>;
+}
 
 const faqs = [
   {
@@ -36,14 +50,16 @@ const socialLinks = [
 ];
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     company: '',
     subject: '',
     message: '',
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -51,13 +67,37 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = (await response.json()) as ContactApiResponse;
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Unable to send your message right now.');
+      }
+
+      setSubmitStatus('success');
+      setSubmitMessage(data.message || 'Your enquiry has been sent successfully.');
       setFormData({ name: '', email: '', company: '', subject: '', message: '' });
-    }, 4000);
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -65,8 +105,8 @@ const Contact = () => {
       {/* ── Hero + Form ─────────────────────────────────── */}
       <section className="min-h-screen bg-navy-900 text-white relative overflow-hidden bg-grid-pattern-dark flex items-center">
         {/* Ambient blobs */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-150 h-150 bg-cyan-500/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-100 h-100 bg-blue-500/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -130,14 +170,14 @@ const Contact = () => {
 
             {/* ── Right: Contact Form ── */}
             <div className="bg-white/[0.04] border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-sm">
-              {submitted ? (
+              {submitStatus === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                   <div className="w-16 h-16 bg-cyan-500/15 border border-cyan-400/30 rounded-2xl flex items-center justify-center mb-5">
                     <CheckCircle2 size={32} className="text-cyan-400" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
                   <p className="text-gray-400 max-w-xs text-sm leading-relaxed">
-                    Thank you for reaching out. Our team will get back to you within one business day.
+                    {submitMessage || 'Thank you for reaching out. Our team will get back to you within one business day.'}
                   </p>
                 </div>
               ) : (
@@ -230,12 +270,28 @@ const Contact = () => {
                       />
                     </div>
 
+                    {submitStatus === 'error' && (
+                      <div className="rounded-xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                        {submitMessage}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full btn-cyan px-8 py-4 rounded-xl text-navy-900 font-extrabold text-sm flex items-center justify-center space-x-2 group mt-2"
+                      disabled={isSubmitting}
+                      className="w-full btn-cyan px-8 py-4 rounded-xl text-navy-900 font-extrabold text-sm flex items-center justify-center space-x-2 group mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      <Send size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                      <span>Send Message</span>
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" />
+                          <span>Sending…</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          <span>Send Message</span>
+                        </>
+                      )}
                     </button>
 
                     <p className="text-center text-xs text-gray-600 pt-1">
@@ -297,6 +353,33 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* ── Final CTA ────────────────────────────────── */}
+      <section className="section-lg bg-navy-900 text-white relative overflow-hidden bg-grid-pattern-dark">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulseGlow pointer-events-none" />
+        <div className="container-custom text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight">Ready to build together?</h2>
+          <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto leading-relaxed">
+            Scroll back up to send us a message, or explore our work to see what we're capable of.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+              className="btn-cyan px-8 py-4 rounded-xl text-navy-900 font-extrabold text-sm inline-flex items-center space-x-2 group"
+            >
+              <span>Send a Message</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <Link
+              href="/portfolio"
+              className="px-8 py-4 border border-gray-700 bg-white/5 backdrop-blur-sm rounded-xl text-white font-bold text-sm hover:bg-white/10 hover:border-gray-500 transition-all"
+            >
+              View Portfolio
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ──────────────────────────────────────── */}
       <section className="section-lg bg-white">
         <div className="container-custom max-w-3xl">
@@ -334,33 +417,6 @@ const Contact = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Final CTA ────────────────────────────────── */}
-      <section className="section-lg bg-navy-900 text-white relative overflow-hidden bg-grid-pattern-dark">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulseGlow pointer-events-none" />
-        <div className="container-custom text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-5 tracking-tight">Ready to build together?</h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto leading-relaxed">
-            Scroll back up to send us a message, or explore our work to see what we're capable of.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="btn-cyan px-8 py-4 rounded-xl text-navy-900 font-extrabold text-sm inline-flex items-center space-x-2 group"
-            >
-              <span>Send a Message</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link
-              href="/portfolio"
-              className="px-8 py-4 border border-gray-700 bg-white/5 backdrop-blur-sm rounded-xl text-white font-bold text-sm hover:bg-white/10 hover:border-gray-500 transition-all"
-            >
-              View Portfolio
-            </Link>
           </div>
         </div>
       </section>

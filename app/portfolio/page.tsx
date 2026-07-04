@@ -1,77 +1,43 @@
-import { ExternalLink, ShoppingCart, HeartPulse, LineChart, Users, CreditCard, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ExternalLink, HeartPulse, Sparkles, BriefcaseBusiness } from 'lucide-react';
 
 const Portfolio = () => {
   const projects = [
-    {
-      title: 'E-Commerce Platform',
-      category: 'Web Development',
-      description: 'A full-featured e-commerce platform with stripe integration, automated inventory, and custom analytics.',
-      icon: ShoppingCart,
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      link: '#',
-      color: 'from-cyan-500 to-blue-500',
-    },
-    {
-      title: 'Healthcare Mobile App',
-      category: 'Mobile Development',
-      description: 'HIPAA-compliant telemedicine application for patient scheduling, profiles, and encrypted call channels.',
-      icon: HeartPulse,
-      technologies: ['React Native', 'Firebase', 'AWS Hub'],
-      link: '#',
-      color: 'from-blue-500 to-indigo-500',
-    },
-    {
-      title: 'SaaS Analytics Dashboard',
-      category: 'Web Development',
-      description: 'Real-time corporate analytics dashboard featuring machine learning models for forecasting insights.',
-      icon: LineChart,
-      technologies: ['Next.js', 'Python', 'PostgreSQL', 'TensorFlow'],
-      link: '#',
-      color: 'from-indigo-500 to-purple-500',
-    },
-    {
-      title: 'Enterprise CRM System',
-      category: 'Web Development',
-      description: 'Custom client relationship manager built with automation triggers, pipeline charts, and full sync logs.',
-      icon: Users,
-      technologies: ['Vue.js', 'Java', 'Oracle DB'],
-      link: '#',
-      color: 'from-purple-500 to-pink-500',
-    },
-    {
-      title: 'FinTech Payment Application',
-      category: 'Full Stack',
-      description: 'Highly secure financial core API supporting ledger bookkeeping and AML automated alerts.',
-      icon: CreditCard,
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
-      link: '#',
-      color: 'from-pink-500 to-rose-500',
-    },
-    {
-      title: 'Learning Management System',
-      category: 'Web Development',
-      description: 'Syllabus-focused educational platform with live video streams, tests, and student portfolio templates.',
-      icon: BookOpen,
-      technologies: ['React', 'Express', 'MongoDB', 'Socket.io'],
-      link: '#',
-      color: 'from-cyan-500 to-teal-500',
-    },
-  ];
+  {
+    title: 'SmartHire - Job Portal',
+    category: 'Full Stack Development',
+    description:
+      'A comprehensive job portal that enables administrators to create and manage job listings while allowing candidates to browse opportunities and apply through an intuitive interface.',
+    icon: BriefcaseBusiness, 
+    technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
+    link: 'https://github.com/saqibhussain789',
+    color: 'from-cyan-500 to-blue-500',
+  },
+  {
+    title: 'CareSphere - Doctor Appointment System',
+    category: 'Full Stack Development',
+    description:
+      'A healthcare appointment management system where patients can book doctor appointments, and doctors can manage their schedules and availability efficiently.',
+    icon: HeartPulse,
+    technologies: ['React.js', 'Node.js', 'Express.js', 'MySQL'],
+    link: 'https://github.com/saqibhussain789',
+    color: 'from-blue-500 to-indigo-500',
+  },
+];
 
-  const caseStudies = [
-    {
-      title: 'TechFlow Inc - Enterprise Cloud Migration',
-      challenge: 'Legacy database systems unable to scale during peak trading periods, resulting in performance drops.',
-      solution: 'Constructed an auto-scaling cluster on AWS, decoupled database replicas, and set up a Redis caching layer.',
-      result: 'Operational efficiency increased by 40% alongside a 99.99% uptime benchmark throughout testing.',
-    },
-    {
-      title: 'StartupX - Rapid MVP Development & Launch',
-      challenge: 'Required to build, audit, and launch a complete SaaS platform prototype within a tight 90-day window.',
-      solution: 'Deployed a modular serverless backend structure utilizing Next.js app router and Firebase integrations.',
-      result: 'Product launched successfully ahead of schedule, enabling the team to secure $2M in seed capital.',
-    },
-  ];
+  // const caseStudies = [
+  //   {
+  //     title: 'TechFlow Inc - Enterprise Cloud Migration',
+  //     challenge: 'Legacy database systems unable to scale during peak trading periods, resulting in performance drops.',
+  //     solution: 'Constructed an auto-scaling cluster on AWS, decoupled database replicas, and set up a Redis caching layer.',
+  //     result: 'Operational efficiency increased by 40% alongside a 99.99% uptime benchmark throughout testing.',
+  //   },
+  //   {
+  //     title: 'StartupX - Rapid MVP Development & Launch',
+  //     challenge: 'Required to build, audit, and launch a complete SaaS platform prototype within a tight 90-day window.',
+  //     solution: 'Deployed a modular serverless backend structure utilizing Next.js app router and Firebase integrations.',
+  //     result: 'Product launched successfully ahead of schedule, enabling the team to secure $2M in seed capital.',
+  //   },
+  // ];
 
   return (
     <>
@@ -112,7 +78,7 @@ const Portfolio = () => {
                 >
                   <div>
                     {/* Visual Mockup Container */}
-                    <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300`}>
+                    <div className={`h-48 bg-linear-to-br ${project.color} flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300`}>
                       {/* Grid background overlay */}
                       <div className="absolute inset-0 bg-grid-pattern-dark opacity-10"></div>
                       <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-md relative z-10">
@@ -157,7 +123,7 @@ const Portfolio = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="section-lg bg-gray-50">
+      {/* <section className="section-lg bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 px-3 py-1 bg-cyan-100 border border-cyan-200 rounded-full mb-4">
@@ -183,7 +149,7 @@ const Portfolio = () => {
                   <div>
                     <h4 className="font-extrabold text-cyan-600 mb-2 text-xs uppercase tracking-wider">Results</h4>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle2 size={16} className="text-cyan-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 size={16} className="text-cyan-500 mt-0.5 shrink-0" />
                       <p className="text-gray-700 text-xs font-bold leading-relaxed">{study.result}</p>
                     </div>
                   </div>
@@ -192,7 +158,7 @@ const Portfolio = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

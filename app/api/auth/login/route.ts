@@ -38,13 +38,19 @@ export async function POST(request: Request) {
       );
     }
 
+    const secret = process.env.JWT_SECRET;
+
+    if (!secret) {
+      throw new Error("JWT_SECRET is not configured");
+    }
+
     const token = jwt.sign(
       {
         id: admin._id,
         email: admin.email,
         role: admin.role,
       },
-      process.env.JWT_SECRET!,
+      secret,
       {
         expiresIn: "7d",
       },
