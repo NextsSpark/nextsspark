@@ -1,5 +1,22 @@
+import type { Metadata } from 'next';
 import { Check, X, ArrowRight, Sparkles, HelpCircle, Shield, Award, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Pricing | NEXTSSPARK Software Development & Training',
+  description:
+    'View flexible pricing plans for custom web and mobile development, consulting support, and professional training programs at NEXTSSPARK.',
+  keywords: ['software development pricing', 'IT training pricing', 'consulting packages', 'custom app pricing'],
+  alternates: {
+    canonical: 'https://nextsspark.com/pricing',
+  },
+  openGraph: {
+    title: 'Pricing | NEXTSSPARK Software Development & Training',
+    description: 'Flexible engagement models for startups, teams, and enterprises looking to build faster and smarter.',
+    url: 'https://nextsspark.com/pricing',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NEXTSSPARK pricing' }],
+  },
+};
 
 const Pricing = () => {
   const pricingPlans = [

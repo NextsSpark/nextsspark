@@ -38,6 +38,11 @@ const Sidebar = () => {
       href: '/admin/blogs',
       icon: FileText,
     },
+    {
+      label: 'Internships',
+      href: '/admin/internships',
+      icon: Briefcase,
+    },
   ];
 
   const isActive = (href: string) => pathname === href;

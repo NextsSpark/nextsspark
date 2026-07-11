@@ -1,5 +1,22 @@
+import type { Metadata } from 'next';
 import { Code2, Zap, BookOpen, ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Services | NEXTSSPARK Software Development & Consulting',
+  description:
+    'Explore NEXTSSPARK’s services for web development, app development, consulting, and IT training tailored to modern business growth.',
+  keywords: ['web development services', 'mobile app development', 'consulting services', 'IT training services'],
+  alternates: {
+    canonical: 'https://nextsspark.com/services',
+  },
+  openGraph: {
+    title: 'Services | NEXTSSPARK Software Development & Consulting',
+    description: 'From custom software delivery to strategy consulting and training, see how NEXTSSPARK supports growth.',
+    url: 'https://nextsspark.com/services',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NEXTSSPARK services' }],
+  },
+};
 
 const Services = () => {
   const mainServices = [

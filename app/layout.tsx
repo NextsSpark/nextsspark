@@ -4,9 +4,10 @@ import LayoutWrapper from '@/components/LayoutWrapper';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'NEXTSSPARK - Software Development & Consulting',
+  metadataBase: new URL('https://nextsspark.com'),
+  title: 'NEXTSSPARK - Software Development, Consulting & IT Training',
   description:
-    'Leading software development, consulting, and IT training company. We deliver innovative solutions for businesses worldwide.',
+    'NEXTSSPARK delivers custom software development, strategic consulting, and professional IT training for startups and growing businesses worldwide.',
   keywords: [
     'software development',
     'consulting',
@@ -14,20 +15,35 @@ export const metadata: Metadata = {
     'web development',
     'mobile apps',
     'digital transformation',
+    'custom software',
+    'SaaS development',
   ],
   authors: [{ name: 'NEXTSSPARK' }],
   creator: 'NEXTSSPARK',
+  alternates: {
+    canonical: 'https://nextsspark.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://nextsspark.com',
-    title: 'NEXTSSPARK - Software Development & Consulting',
-    description: 'Leading software development, consulting, and IT training company',
+    siteName: 'NEXTSSPARK',
+    title: 'NEXTSSPARK - Software Development, Consulting & IT Training',
+    description: 'Custom software solutions, strategic consulting, and expert IT training tailored to modern digital growth.',
     images: [
       {
-        url: 'https://nextsspark.com/og-image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
+        alt: 'NEXTSSPARK software development company',
       },
     ],
   },
@@ -35,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'NEXTSSPARK',
     description: 'Software Development & Consulting',
-    images: ['https://nextsspark.com/og-image.png'],
+    images: ['/og-image.png'],
   },
 };
 

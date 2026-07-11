@@ -1,4 +1,21 @@
+import type { Metadata } from 'next';
 import { Lightbulb, Eye, Target, Heart, Award, Users, Cpu, ShieldCheck, Sparkles, Calendar } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About NEXTSSPARK | Trusted Software Development Partner',
+  description:
+    'Discover NEXTSSPARK’s mission, values, milestones, and commitment to building innovative digital experiences for modern businesses.',
+  keywords: ['about NEXTSSPARK', 'software company', 'technology partner', 'digital transformation company'],
+  alternates: {
+    canonical: 'https://nextsspark.com/about',
+  },
+  openGraph: {
+    title: 'About NEXTSSPARK | Trusted Software Development Partner',
+    description: 'Learn about our journey, values, and the team behind custom software and consulting solutions.',
+    url: 'https://nextsspark.com/about',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'About NEXTSSPARK' }],
+  },
+};
 
 const About = () => {
   const values = [
