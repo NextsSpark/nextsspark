@@ -3,6 +3,7 @@ import './globals.css';
 import LayoutWrapper from '@/components/LayoutWrapper';
 import { ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nextsspark.com'),
@@ -69,6 +70,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white text-gray-900 font-sans">
         <Analytics />
+        <SpeedInsights />
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
