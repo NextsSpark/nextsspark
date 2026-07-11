@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import LayoutWrapper from '@/components/LayoutWrapper';
 import { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nextsspark.com'),
@@ -67,6 +68,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="bg-white text-gray-900 font-sans">
+        <Analytics />
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>

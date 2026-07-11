@@ -139,14 +139,14 @@ const Portfolio = () => {
                 className="group bg-white rounded-2xl overflow-hidden border border-gray-250 shadow-sm hover:shadow-xl hover:border-cyan-400 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className={`h-52 bg-gradient-to-br ${project.color} relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300`}>
+                  <div className={`h-52 bg-linear-to-br ${project.color} relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-300`}>
                     <div className="absolute inset-0 bg-grid-pattern-dark opacity-10"></div>
                     <img
                       src={project.image}
                       alt={project.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
                   </div>
 
                   <div className="p-6">
