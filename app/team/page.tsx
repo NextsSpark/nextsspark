@@ -13,15 +13,22 @@ const Team = () => {
     {
       name: 'Aqib Hussain',
       role: 'Software Engineer',
-      image: '/images/team/Aqib.jpg',
+      image: '/images/team/Aqib1.jpg',
       expertise: ['React', 'Node', 'TypeScript'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {
       name: 'Fazal Ur Rahman',
       role: 'AI Engineer',
-      image: '/images/team/fazal_1.jpg',
+      image: '/images/team/Fazal.jpeg',
       expertise: ['Python', 'Machine Learning', 'Data Science'],
+      socials: { linkedin: '#', twitter: '#', github: '#' },
+    },
+    {
+      name: 'Najibullah',
+      role: 'Software Engineer',
+      image: '/images/team/Team.png',
+      expertise: ['React', 'Node', 'TypeScript'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {
@@ -122,7 +129,8 @@ const Team = () => {
                 <img
                   src="/images/team/Saqib.jpg"
                   alt="Saqib Hassain — CEO & Founder"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover scale-[1.05]"
+                  style={{ objectPosition: 'center 18%' }}
                 />
               </div>
             </div>
@@ -180,16 +188,17 @@ const Team = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl hover:border-cyan-400 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl hover:border-cyan-400 transition-all duration-300 flex flex-col justify-between group min-h-[440px]"
               >
-                <div>
+                <div className="flex flex-col h-full">
                   {/* Photo area */}
-                  <div className={`h-52 bg-linear-to-br ${avatarGradients[index % avatarGradients.length]} relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent z-10" />
+                  <div className={`h-72 sm:h-80 bg-linear-to-br ${avatarGradients[index % avatarGradients.length]} relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent z-10" />
                     <img
                       src={member.image}
                       alt={`Photo of ${member.name}`}
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover scale-[1.04] transition-transform duration-300 group-hover:scale-[1.08]"
+                      style={{ objectPosition: 'center 18%' }}
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                     />
                   </div>
@@ -215,7 +224,7 @@ const Team = () => {
                 {/* Socials */}
                 <div className="px-6 py-4 flex space-x-3 border-t border-gray-100">
                   <a href={member.socials.linkedin} className="text-gray-400 hover:text-cyan-500 hover:scale-105 transition-all"><FaLinkedin size={17} /></a>
-                  <a href={member.socials.twitter} className="text-gray-400 hover:text-cyan-500 hover:scale-105 transition-all"><FaTwitter size={17} /></a>
+                  {/* <a href={member.socials.twitter} className="text-gray-400 hover:text-cyan-500 hover:scale-105 transition-all"><FaTwitter size={17} /></a> */}
                   <a href={member.socials.github} className="text-gray-400 hover:text-cyan-500 hover:scale-105 transition-all"><FaGithub size={17} /></a>
                 </div>
               </div>

@@ -4,7 +4,7 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaFacebookF,
-  FaXTwitter,
+  FaInstagram,
 } from 'react-icons/fa6';
 import Image from 'next/image';
 
@@ -105,9 +105,9 @@ const Footer = () => {
           <div className="flex justify-center space-x-4 mb-8">
             {[
               { icon: FaLinkedinIn, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
-              { icon: FaXTwitter, href: 'https://x.com', label: 'X (Twitter)', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
               { icon: FaGithub, href: 'https://github.com', label: 'GitHub', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
               { icon: FaFacebookF, href: 'https://facebook.com', label: 'Facebook', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
+              { icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
             ].map((social, idx) => {
               const Icon = social.icon;
               return (
