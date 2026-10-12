@@ -12,21 +12,21 @@ const Team = () => {
   const teamMembers = [
     {
       name: 'Aqib Hussain',
-      role: 'Software Engineer',
+      role: 'Senior Software Engineer',
       image: '/images/team/Aqib1.jpg',
       expertise: ['React', 'Node', 'TypeScript'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {
       name: 'Fazal Ur Rahman',
-      role: 'AI Engineer',
+      role: 'Senior AI Engineer',
       image: '/images/team/Fazal.jpeg',
       expertise: ['Python', 'Machine Learning', 'Data Science'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     {
       name: 'Najibullah',
-      role: 'Software Engineer',
+      role: 'Senior Software Engineer',
       image: '/images/team/Team.png',
       expertise: ['React', 'Node', 'TypeScript'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
@@ -36,6 +36,27 @@ const Team = () => {
       role: 'Social Media Manager',
       image: '/images/team/Mubeen.jpg',
       expertise: ['Photoshop', 'Illustrator', 'InDesign'],
+      socials: { linkedin: '#', twitter: '#', github: '#' },
+    },
+    {
+      name: 'Sadeem Fatima',
+      role: 'AI Engineer',
+      image: '/images/team/Female.png',
+      expertise: ['Python', 'Machine Learning', 'Data Science'],
+      socials: { linkedin: '#', twitter: '#', github: '#' },
+    },
+    {
+      name: 'Urwa Khan',
+      role: 'AI Engineer',
+      image: '/images/team/Female.png',
+      expertise: ['Python', 'Machine Learning', 'Data Science'],
+      socials: { linkedin: '#', twitter: '#', github: '#' },
+    },
+    {
+      name: 'Eman Amir',
+      role: 'Graphic Designer',
+      image: '/images/team/Female.png',
+      expertise: ['Social Media', 'Content Creation', 'Video Editing'],
       socials: { linkedin: '#', twitter: '#', github: '#' },
     },
     // {

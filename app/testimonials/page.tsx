@@ -85,19 +85,18 @@ const Testimonials = () => {
   ];
 
   const stats = [
-    { number: '100+', label: 'Happy Clients' },
-    { number: '150+', label: 'Projects Delivered' },
-    { number: '98%', label: 'Client Satisfaction' },
+    { number: '10+', label: 'Happy Clients' },
+    { number: '10+', label: 'Projects Delivered' },
+    { number: '100%', label: 'Client Retention' },
     { number: '5★', label: 'Average Rating' },
   ];
 
   const industries = [
-    { name: 'E-Commerce', count: '28 projects' },
-    { name: 'Healthcare', count: '15 projects' },
-    { name: 'FinTech', count: '12 projects' },
-    { name: 'Education', count: '18 projects' },
-    { name: 'SaaS', count: '35 projects' },
-    { name: 'Enterprise', count: '22 projects' },
+    { name: 'E-Commerce', count: '3 projects' },
+    { name: 'Healthcare', count: '3 projects' },
+    { name: 'SaaS', count: '2 projects' },
+    { name: 'Digital Agency', count: '1 project' },
+    { name: 'Medical Commerce', count: '1 project' },
   ];
 
   const successMetrics = [

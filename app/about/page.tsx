@@ -4,7 +4,7 @@ import { Lightbulb, Eye, Target, Heart, Award, Users, Cpu, ShieldCheck, Sparkles
 export const metadata: Metadata = {
   title: 'About NEXTSSPARK | Trusted Software Development Partner',
   description:
-    'Discover NEXTSSPARK’s mission, values, milestones, and commitment to building innovative digital experiences for modern businesses.',
+    'Discover NEXTSSPARK mission, values, milestones, and commitment to building innovative digital experiences for modern businesses.',
   keywords: ['about NEXTSSPARK', 'software company', 'technology partner', 'digital transformation company'],
   alternates: {
     canonical: 'https://nextsspark.com/about',
@@ -47,42 +47,32 @@ const About = () => {
 
   const timeline = [
     {
-      year: '2019',
+      year: '2025',
       title: 'Company Founded',
-      description: 'NEXTSSPARK was established with a mission to transform digital solutions.',
+      description: 'NEXTSSPARK was established in Lahore with a mission to deliver quality digital solutions for growing businesses.',
     },
     {
-      year: '2020',
-      title: 'First Major Client',
-      description: 'Successfully delivered our first enterprise-level cloud migration project.',
+      year: '2025',
+      title: 'First Client Projects',
+      description: 'Delivered our first batch of web platforms including e-commerce, healthcare, and agency sites.',
     },
     {
-      year: '2021',
-      title: 'Team Expansion',
-      description: 'Grew to 25 talented professionals across design and full-stack domains.',
+      year: '2026',
+      title: 'Team Growth',
+      description: 'Expanded the core team with skilled developers, an AI engineer, and a creative lead.',
     },
     {
-      year: '2022',
-      title: 'Training Program Launch',
-      description: 'Launched comprehensive IT training courses and advanced developer bootcamps.',
-    },
-    {
-      year: '2023',
-      title: 'Global Recognition',
-      description: 'Recognized as a leading emerging tech consultancy in South Asia.',
-    },
-    {
-      year: '2024',
-      title: 'Continued Growth',
-      description: 'Expanding our specialized AI integration and SaaS scaling departments.',
+      year: '2026',
+      title: 'Building Forward',
+      description: 'Actively taking on more projects and expanding into consulting and training services.',
     },
   ];
 
   const highlights = [
-    { title: '150+ Projects Delivered', desc: 'Across multiple industries and geographies', icon: Award },
-    { title: '100+ Satisfied Clients', desc: 'From startups to Fortune 500 companies', icon: Users },
-    { title: '50+ Team Members', desc: 'Expert developers, designers, and consultants', icon: Cpu },
-    { title: '98% Client Satisfaction', desc: 'Consistently delivering top-tier systems', icon: ShieldCheck },
+    { title: '10+ Projects Delivered', desc: 'Web platforms, SaaS, healthcare, and e-commerce', icon: Award },
+    { title: '10+ Satisfied Clients', desc: 'Startups and growing businesses across industries', icon: Users },
+    { title: '5+ Team Members', desc: 'Developers, designers, and strategists', icon: Cpu },
+    { title: '100% Client Retention', desc: 'Clients keep coming back for more', icon: ShieldCheck },
   ];
 
   return (
@@ -94,11 +84,11 @@ const About = () => {
           <div className="text-center">
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-cyan-500/10 border border-cyan-400/20 rounded-full mb-6">
               <Sparkles size={16} className="text-cyan-400" />
-              <span className="text-cyan-300 text-sm font-semibold tracking-wide">Pioneers of Digital Change</span>
+              <span className="text-cyan-300 text-sm font-semibold tracking-wide">Who We Are</span>
             </div>
             <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight">About Us</h1>
             <p className="text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
-              Empowering businesses through custom design, intelligent consulting, and certified training since 2019.
+              A small but focused team delivering quality software, consulting, and training since 2025.
             </p>
           </div>
         </div>
@@ -115,13 +105,13 @@ const About = () => {
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-800 mb-6 tracking-tight">Our Story</h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                NEXTSSPARK was founded with a simple yet powerful vision: to bridge the gap between businesses and cutting-edge technology. Our founders, with decades of combined experience in software development and consulting, recognized the need for a company that truly understands client needs.
+                NEXTSSPARK started in 2025 with a clear goal: build software that actually works for businesses. Founded by Saqib Hussain, our team focuses on solving real problems with clean code and thoughtful design.
               </p>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Today, we've grown into a trusted partner for over 100 clients worldwide, delivering more than 150 successful projects across diverse industries. Our success is built on a foundation of innovation, integrity, and an unwavering commitment to our clients' success.
+                In just our first year, we have delivered over 10 projects — from e-commerce platforms and healthcare dashboards to SaaS tools and agency websites. Every project is built with the same standard: reliable, modern, and ready to scale.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                From startups to enterprises, we've helped organizations transform their digital infrastructure and achieve their business goals. Our team of skilled professionals continues to push boundaries and set new standards in the industry.
+                We are a growing team of 5+ professionals who care deeply about the work we do. We are not a massive agency — and that is our advantage. You work directly with the people who build your product.
               </p>
             </div>
 
@@ -156,13 +146,13 @@ const About = () => {
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200/60 border-l-4 border-l-cyan-500">
               <h3 className="text-2xl font-bold text-navy-800 mb-4 tracking-tight">Our Mission</h3>
               <p className="text-gray-650 leading-relaxed text-sm">
-                To empower businesses by delivering innovative, scalable, and sustainable technology solutions that drive growth, enhance efficiency, and create lasting value for our clients and partners worldwide.
+                To empower businesses by delivering innovative, scalable, and sustainable technology solutions that drive growth, enhance efficiency, and create lasting value for our clients and partners.
               </p>
             </div>
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200/60 border-l-4 border-l-cyan-500">
               <h3 className="text-2xl font-bold text-navy-800 mb-4 tracking-tight">Our Vision</h3>
               <p className="text-gray-650 leading-relaxed text-sm">
-                To be the most trusted and innovative technology partner globally, recognized for transforming businesses through excellence in software development, strategic consulting, and comprehensive training.
+                To become a trusted technology partner recognized for transforming businesses through excellence in software development, strategic consulting, and hands-on training.
               </p>
             </div>
           </div>
@@ -170,7 +160,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="section-lg bg-white">
+      <section id="values" className="section-lg bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 px-3 py-1 bg-cyan-100 border border-cyan-200 rounded-full mb-4">
@@ -178,7 +168,7 @@ const About = () => {
             </div>
             <h2 className="text-4xl font-extrabold text-navy-800 mb-4 tracking-tight">Our Core Values</h2>
             <p className="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-              The fundamental architectural values that govern our projects and team culture.
+              The principles that guide every project and decision we make.
             </p>
           </div>
 
@@ -208,7 +198,7 @@ const About = () => {
             </div>
             <h2 className="text-4xl font-extrabold text-navy-800 mb-4 tracking-tight">Our Journey</h2>
             <p className="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
-              Key technological and organizational milestones in our history.
+              Key milestones in our growing story.
             </p>
           </div>
 

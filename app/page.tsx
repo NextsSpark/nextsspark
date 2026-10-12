@@ -69,10 +69,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { label: 'Projects Completed', value: '150+', icon: Award },
-    { label: 'Happy Clients', value: '100+', icon: Users },
-    { label: 'Team Members', value: '50+', icon: Cpu },
-    { label: 'Years of Experience', value: '5+', icon: Shield },
+    { label: 'Projects Delivered', value: '10+', icon: Award },
+    { label: 'Happy Clients', value: '10+', icon: Users },
+    { label: 'Team Members', value: '5+', icon: Cpu },
+    { label: 'Year Established', value: '2025', icon: Shield },
   ];
 
   return (
@@ -150,12 +150,12 @@ const Home = () => {
 
                     <div className="bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-4 border border-white/10 flex-1">
                       <p className="text-xs uppercase tracking-widest text-gray-400">Active Clients</p>
-                      <h3 className="text-2xl font-bold text-white mt-1">250+</h3>
+                      <h3 className="text-2xl font-bold text-white mt-1">10+</h3>
                     </div>
 
                     <div className="bg-white/10 backdrop-blur-xl rounded-2xl px-5 py-4 border border-white/10 flex-1">
                       <p className="text-xs uppercase tracking-widest text-gray-400">Projects</p>
-                      <h3 className="text-2xl font-bold text-white mt-1">500+</h3>
+                      <h3 className="text-2xl font-bold text-white mt-1">10+</h3>
                     </div>
 
                   </div>
