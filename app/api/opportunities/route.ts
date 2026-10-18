@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Opportunity from "@/models/Opportunity";
+import { revalidatePath } from "next/cache";
 
 export async function GET(request: Request) {
   try {
@@ -36,6 +37,9 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     const opportunity = await Opportunity.create(body);
+
+    revalidatePath("/careers");
+    revalidatePath("/admin/opportunities");
 
     return NextResponse.json(opportunity, {
       status: 201,

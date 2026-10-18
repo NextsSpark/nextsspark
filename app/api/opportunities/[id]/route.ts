@@ -1,6 +1,7 @@
 import Opportunity from "@/models/Opportunity";
 import { connectDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
 export async function GET(
   _request: Request,
@@ -40,6 +41,9 @@ export async function DELETE(
 
     await Opportunity.findByIdAndDelete(id);
 
+    revalidatePath("/careers");
+    revalidatePath("/admin/opportunities");
+
     return NextResponse.json({
       message: "Opportunity deleted successfully",
     });
@@ -71,6 +75,9 @@ export async function PUT(
           runValidators: true,
         }
       );
+
+    revalidatePath("/careers");
+    revalidatePath("/admin/opportunities");
 
     return NextResponse.json(updatedOpportunity);
   } catch (error) {

@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Mail, MapPin, Phone} from 'lucide-react';
 import {
   FaLinkedinIn,
-  FaGithub,
   FaFacebookF,
   FaInstagram,
 } from 'react-icons/fa6';
@@ -104,10 +103,10 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-4 mb-8">
             {[
-              { icon: FaLinkedinIn, href: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
-              { icon: FaGithub, href: 'https://github.com', label: 'GitHub', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
-              { icon: FaFacebookF, href: 'https://facebook.com', label: 'Facebook', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
-              { icon: FaInstagram, href: 'https://instagram.com', label: 'Instagram', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
+              { icon: FaLinkedinIn, href: 'https://www.linkedin.com/company/nextssspark', label: 'LinkedIn', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
+              // { icon: FaGithub, href: 'https://github.com', label: 'GitHub', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
+              { icon: FaFacebookF, href: 'https://www.facebook.com/share/1JcuLWDYVZ/', label: 'Facebook', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
+              { icon: FaInstagram, href: 'https://www.instagram.com/nextsspark', label: 'Instagram', color: 'hover:text-cyan-400 hover:bg-cyan-950/30' },
             ].map((social, idx) => {
               const Icon = social.icon;
               return (

@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { Plus, Edit, MapPin, Briefcase } from 'lucide-react';
 import DeleteOpportunityButton from "@/components/admin/DeleteOpportunityButton";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function OpportunitiesPage() {
   const opportunities = await getOpportunities();
 

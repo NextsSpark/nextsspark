@@ -14,6 +14,9 @@ import {
 import Link from "next/link";
 import { getOpportunities } from "@/lib/opportunities";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const Careers = async () => {
   const opportunities = await getOpportunities();
 
@@ -136,71 +139,88 @@ const Careers = async () => {
             </h2>
           </div>
 
-          <div className="space-y-6 max-w-4xl mx-auto">
-            {openPositions.map((job: any) => (
-              <div
-                key={job._id}
-                className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-md transition-all duration-300 group"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                  <div className="lg:col-span-4">
-                    <h3 className="text-lg font-bold text-navy-800 mb-1 group-hover:text-cyan-600 tracking-tight transition-colors">
-                      {job.title}
-                    </h3>
-                    <span className="px-2.5 py-1 bg-gray-100 text-gray-600 border border-gray-200 text-[10px] font-bold uppercase rounded-full">
-                      {job.department}
-                    </span>
-                  </div>
-
-                  <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4 items-center">
-                    <div className="flex items-center space-x-2 text-gray-700 font-semibold">
-                      <MapPin size={14} className="text-cyan-500 shrink-0" />
-                      <span className="text-xs">{job.location}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-gray-700 font-semibold">
-                      <Briefcase size={14} className="text-cyan-500 shrink-0" />
-                      <span className="text-xs">{job.type}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-gray-700 font-semibold">
-                      <DollarSign
-                        size={14}
-                        className="text-cyan-500 shrink-0"
-                      />
-                      <span className="text-xs">{job.salary}</span>
-                    </div>
-                    <div className="text-right">
-                      <Link
-                        href={`/contact?position=${job.id}`}
-                        className="btn-cyan px-4 py-2 text-navy-900 rounded-xl text-xs font-extrabold tracking-wide uppercase inline-flex items-center space-x-1 group/btn"
-                      >
-                        <span>Apply</span>
-                        <ArrowRight
-                          size={12}
-                          className="group-hover/btn:translate-x-0.5 transition-transform"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <p className="text-gray-600 text-xs leading-relaxed mb-4">
-                    {job.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {job.skills.map((skill: any, idx: number) => (
-                      <span
-                        key={idx}
-                        className="text-[10px] bg-cyan-50 text-cyan-700 border border-cyan-100 px-2 py-0.5 rounded-full font-bold"
-                      >
-                        {skill}
+          {openPositions.length > 0 ? (
+            <div className="space-y-6 max-w-4xl mx-auto">
+              {openPositions.map((job: any) => (
+                <div
+                  key={job._id}
+                  className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-cyan-400 hover:shadow-md transition-all duration-300 group"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    <div className="lg:col-span-4">
+                      <h3 className="text-lg font-bold text-navy-800 mb-1 group-hover:text-cyan-600 tracking-tight transition-colors">
+                        {job.title}
+                      </h3>
+                      <span className="px-2.5 py-1 bg-gray-100 text-gray-600 border border-gray-200 text-[10px] font-bold uppercase rounded-full">
+                        {job.department}
                       </span>
-                    ))}
+                    </div>
+
+                    <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4 items-center">
+                      <div className="flex items-center space-x-2 text-gray-700 font-semibold">
+                        <MapPin size={14} className="text-cyan-500 shrink-0" />
+                        <span className="text-xs">{job.location}</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-gray-700 font-semibold">
+                        <Briefcase size={14} className="text-cyan-500 shrink-0" />
+                        <span className="text-xs">{job.type}</span>
+                      </div>
+                      <div className="flex items-center space-x-2 text-gray-700 font-semibold">
+                        <DollarSign
+                          size={14}
+                          className="text-cyan-500 shrink-0"
+                        />
+                        <span className="text-xs">{job.salary}</span>
+                      </div>
+                      <div className="text-right">
+                        <Link
+                          href={`/contact?position=${job._id || job.id}`}
+                          className="btn-cyan px-4 py-2 text-navy-900 rounded-xl text-xs font-extrabold tracking-wide uppercase inline-flex items-center space-x-1 group/btn"
+                        >
+                          <span>Apply</span>
+                          <ArrowRight
+                            size={12}
+                            className="group-hover/btn:translate-x-0.5 transition-transform"
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <p className="text-gray-600 text-xs leading-relaxed mb-4">
+                      {job.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {job.skills?.map((skill: any, idx: number) => (
+                        <span
+                          key={idx}
+                          className="text-[10px] bg-cyan-50 text-cyan-700 border border-cyan-100 px-2 py-0.5 rounded-full font-bold"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="max-w-2xl mx-auto text-center py-12 px-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
+              <Briefcase className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+              <h3 className="text-lg font-bold text-navy-800 mb-2">No Open Positions Currently</h3>
+              <p className="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">
+                We do not have any job vacancies at this moment. However, we are always eager to connect with talented builders and designers.
+              </p>
+              <Link
+                href="/contact"
+                className="btn-cyan px-6 py-2.5 text-navy-900 rounded-xl text-xs font-extrabold tracking-wide uppercase inline-flex items-center space-x-1"
+              >
+                <span>Send Spontaneous Application</span>
+                <ArrowRight size={12} />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
@@ -218,66 +238,83 @@ const Careers = async () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {internshipPrograms.map((program: any, index: number) => (
-              <div
-                key={index}
-                className="bg-linear-to-br from-cyan-50 to-blue-50/50 p-8 rounded-2xl border-2 border-cyan-200/60 hover:shadow-md transition-shadow flex flex-col justify-between"
-              >
-                <div>
-                  <h3 className="text-lg font-bold text-navy-800 mb-4 tracking-tight leading-snug">
-                    {program.title}
-                  </h3>
-
-                  <div className="space-y-2.5 mb-6 text-xs text-gray-700 border-b border-cyan-200/50 pb-4">
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold text-gray-500 uppercase text-[9px] tracking-wider">
-                        Duration
-                      </span>
-                      <span className="font-bold text-navy-800 bg-cyan-100/50 border border-cyan-200/50 px-2 py-0.5 rounded-full">
-                        {program.duration}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold text-gray-500 uppercase text-[9px] tracking-wider">
-                        Stipend
-                      </span>
-                      <span className="font-bold text-cyan-600">
-                        {program.stipend}
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-600 text-xs leading-relaxed mb-6">
-                    {program.description}
-                  </p>
-
-                  <div className="mb-8">
-                    <p className="text-[9px] font-bold text-gray-400 tracking-wider uppercase mb-2">
-                      Curriculum Topics
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {program.skills.map((skill: any, idx: number) => (
-                        <span
-                          key={idx}
-                          className="text-[9px] bg-white text-navy-850 px-2.5 py-1 rounded border border-cyan-300/60 font-semibold shadow-sm"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <Link
-                  href="/contact"
-                  className="block text-center bg-cyan-600 text-white py-3 rounded-xl font-extrabold text-xs tracking-wider uppercase hover:bg-cyan-700 transition-colors shadow-sm"
+          {internshipPrograms.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {internshipPrograms.map((program: any, index: number) => (
+                <div
+                  key={index}
+                  className="bg-linear-to-br from-cyan-50 to-blue-50/50 p-8 rounded-2xl border-2 border-cyan-200/60 hover:shadow-md transition-shadow flex flex-col justify-between"
                 >
-                  Apply Now
-                </Link>
-              </div>
-            ))}
-          </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy-800 mb-4 tracking-tight leading-snug">
+                      {program.title}
+                    </h3>
+
+                    <div className="space-y-2.5 mb-6 text-xs text-gray-700 border-b border-cyan-200/50 pb-4">
+                      <div className="flex justify-between items-center">
+                        <span className="font-semibold text-gray-500 uppercase text-[9px] tracking-wider">
+                          Duration
+                        </span>
+                        <span className="font-bold text-navy-800 bg-cyan-100/50 border border-cyan-200/50 px-2 py-0.5 rounded-full">
+                          {program.duration}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="font-semibold text-gray-500 uppercase text-[9px] tracking-wider">
+                          Stipend
+                        </span>
+                        <span className="font-bold text-cyan-600">
+                          {program.stipend}
+                        </span>
+                      </div>
+                    </div>
+
+                    <p className="text-gray-600 text-xs leading-relaxed mb-6">
+                      {program.description}
+                    </p>
+
+                    <div className="mb-8">
+                      <p className="text-[9px] font-bold text-gray-400 tracking-wider uppercase mb-2">
+                        Curriculum Topics
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {program.skills?.map((skill: any, idx: number) => (
+                          <span
+                            key={idx}
+                            className="text-[9px] bg-white text-navy-850 px-2.5 py-1 rounded border border-cyan-300/60 font-semibold shadow-sm"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link
+                    href="/contact"
+                    className="block text-center bg-cyan-600 text-white py-3 rounded-xl font-extrabold text-xs tracking-wider uppercase hover:bg-cyan-700 transition-colors shadow-sm"
+                  >
+                    Apply Now
+                  </Link>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="max-w-2xl mx-auto text-center py-12 px-6 bg-linear-to-br from-cyan-50/50 to-blue-50/30 rounded-2xl border border-cyan-100">
+              <GraduationCap className="w-12 h-12 text-cyan-600 mx-auto mb-4" />
+              <h3 className="text-lg font-bold text-navy-800 mb-2">No Active Internship Cohorts</h3>
+              <p className="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">
+                Applications for our current internship cycle are closed. Contact our team to learn about the upcoming cohorts and programs.
+              </p>
+              <Link
+                href="/contact"
+                className="btn-cyan px-6 py-2.5 text-navy-900 rounded-xl text-xs font-extrabold tracking-wide uppercase inline-flex items-center space-x-1"
+              >
+                <span>Inquire About Next Cohort</span>
+                <ArrowRight size={12} />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
